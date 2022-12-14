@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: bikestore-back
+  jpa:
+    database-platform: com.coast.brenno.bikestoreback.conf.SQLDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      javax:
+        persistence:
+          lock:
+            timeout: 10000
+  datasource:
+    url: jdbc:sqlite:sqlitesample.db
+    driver-class-name: org.sqlite.JDBC
+    username: admin
+    password: admin
+
+
+bikestore:
+  app:
+    jwtSecret: mysecret
+    jwtExpirationMs: 1000000
