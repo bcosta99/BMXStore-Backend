@@ -68,14 +68,14 @@ public class CartService {
         return new CartDto(cartItems);
     }
 
-//    public void updateCartItem(AddToCartDto cartDto, User user, Product product) {
+    //    public void updateCartItem(AddToCartDto cartDto, User user, Product product) {
 //        Cart cart = cartRepository.getOne(Math.toIntExact(cartDto.getProductId()));
 //        cart.setQuantity(cartDto.getQuantity());
 //        cart.setCreatedDate(new Date());
 //        cartRepository.save(cart);
 //    }
 //
-    public void deleteCartItem(Integer id){
+    public void deleteCartItem(Integer id) {
         cartRepository.deleteById(id);
     }
 //

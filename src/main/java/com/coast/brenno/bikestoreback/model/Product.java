@@ -25,6 +25,7 @@ public class Product {
     private String color;
     private Integer stock;
     private Integer price;
+    private String url;
 
     @Override
     public int hashCode() {

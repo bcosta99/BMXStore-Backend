@@ -7,6 +7,7 @@ public final class FileUtil {
 
     public static final String folderPath = "incoming-files//";
     public static final Path filePath = Paths.get(folderPath);
+
     private FileUtil() {
     }
 }
