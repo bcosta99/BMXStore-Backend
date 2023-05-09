@@ -2,7 +2,7 @@ spring:
   application:
     name: bikestore-back
   jpa:
-    database-platform: com.coast.brenno.bikestoreback.conf.SQLDialect
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
     hibernate:
       ddl-auto: update
     properties:

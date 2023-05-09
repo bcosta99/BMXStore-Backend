@@ -2,8 +2,7 @@ package com.coast.brenno.bikestoreback.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.*;
 
 @Data
 @Entity

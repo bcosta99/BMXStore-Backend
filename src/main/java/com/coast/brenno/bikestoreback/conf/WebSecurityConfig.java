@@ -65,12 +65,9 @@ public class WebSecurityConfig {
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and().authorizeRequests()
-                .antMatchers("/**")
-                .permitAll().antMatchers("/**")
-                .permitAll()
-                .anyRequest()
-                .authenticated();
+                .and().authorizeRequests(requests -> requests
+                        .requestMatchers("/**").permitAll()
+                        .anyRequest().authenticated());
 
         http.authenticationProvider(authenticationProvider());
 
