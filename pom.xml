@@ -15,13 +15,13 @@
     <description>bikestore-back</description>
     <properties>
         <java.version>17</java.version>
-        <sqlite-jdbc.version>3.25.2</sqlite-jdbc.version>
-        <hibernate-core.version>6.1.7.Final</hibernate-core.version>
+        <sqlite-jdbc.version>3.40.1.0</sqlite-jdbc.version>
+        <hibernate-core.version>6.2.0.CR3</hibernate-core.version>
         <annotations.version>24.0.1</annotations.version>
         <spring-boot-starter-test.version>3.0.4</spring-boot-starter-test.version>
         <lombok.version>1.18.26</lombok.version>
-        <jjwt.version>0.9.1</jjwt.version>
-        <validation-api.version>2.0.0.Final</validation-api.version>
+        <jjwt-api.version>0.11.5</jjwt-api.version>
+        <validation-api.version>2.0.1.Final</validation-api.version>
     </properties>
     <dependencies>
         <dependency>
@@ -31,6 +31,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>3.1.0</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -43,8 +44,20 @@
         </dependency>
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt</artifactId>
-            <version>${jjwt.version}</version>
+            <artifactId>jjwt-api</artifactId>
+            <version>${jjwt-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>${jjwt-api.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId> <!-- or jjwt-gson if Gson is preferred -->
+            <version>${jjwt-api.version}</version>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -71,6 +84,7 @@
         <dependency>
             <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-community-dialects</artifactId>
+            <version>6.2.0.CR3</version>
         </dependency>
 
         <!-- Test Dependencies -->
@@ -78,6 +92,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>3.1.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

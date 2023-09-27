@@ -2,11 +2,13 @@ package com.coast.brenno.bikestoreback.utils.security;
 
 import com.coast.brenno.bikestoreback.model.UserDetailsImpl;
 import io.jsonwebtoken.*;
+import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
+import javax.crypto.SecretKey;
 import java.util.Date;
 
 @Slf4j
@@ -23,11 +25,13 @@ public class JwtUtils {
 
         UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
 
+        SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS512); //or HS384 or HS512
+
         return Jwts.builder()
                 .setSubject((userPrincipal.getUsername()))
                 .setIssuedAt(new Date())
                 .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
-                .signWith(SignatureAlgorithm.HS512, jwtSecret)
+                .signWith(key)
                 .compact();
     }
 
