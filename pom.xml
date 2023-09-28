@@ -15,7 +15,7 @@
     <description>bikestore-back</description>
     <properties>
         <java.version>17</java.version>
-        <sqlite-jdbc.version>3.40.1.0</sqlite-jdbc.version>
+        <sqlite-jdbc.version>3.41.2.2</sqlite-jdbc.version>
         <hibernate-core.version>6.2.0.CR3</hibernate-core.version>
         <annotations.version>24.0.1</annotations.version>
         <spring-boot-starter-test.version>3.0.4</spring-boot-starter-test.version>
