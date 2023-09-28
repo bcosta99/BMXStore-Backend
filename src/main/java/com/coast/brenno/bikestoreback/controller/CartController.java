@@ -21,7 +21,7 @@ public class CartController {
         return ResponseEntity.ok("Item added to Cart succesfully!");
     }
 
-    @GetMapping("/")
+    @GetMapping(path = {"", "/"})
     public ResponseEntity<CartDto> getCartItems() {
         CartDto cartDto = cartService.listCartItems();
         return new ResponseEntity<>(cartDto, HttpStatus.OK);

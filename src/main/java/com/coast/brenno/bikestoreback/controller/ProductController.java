@@ -28,7 +28,7 @@ public class ProductController {
     /**
      * Get All Products
      */
-    @GetMapping(path = "/", produces = "application/json")
+    @GetMapping(path = {"", "/"}, produces = "application/json")
     public ResponseEntity getAllProducts() {
         List<Product> allItems = service.getAllProducts();
         return ResponseEntity.ok(allItems);
