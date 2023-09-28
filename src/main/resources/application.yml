@@ -19,5 +19,5 @@ spring:
 
 bikestore:
   app:
-    jwtSecret: mysecret
+    jwtSecret: mysecretthatshouldbelargenoeughtobesecure123456789
     jwtExpirationMs: 1000000

@@ -27,11 +27,6 @@ public class CartController {
         return new ResponseEntity<>(cartDto, HttpStatus.OK);
     }
 
-    //    @PutMapping("/update/{cartItemId}")
-//    public ResponseEntity updateCartItem(@RequestBody @Valid AddToCartDto cartDto){
-//        return ;
-//    }
-
     @DeleteMapping("/delete/{cartItemId}")
     public ResponseEntity deleteCartItem(@PathVariable("cartItemId") Integer id) {
         cartService.deleteCartItem(id);
