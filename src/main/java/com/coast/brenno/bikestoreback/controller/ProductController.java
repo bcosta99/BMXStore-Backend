@@ -19,14 +19,14 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    private final ProductService service;
+    private final ProductService productService;
 
     /**
      * Get All Products
      */
     @GetMapping(path = {"", "/"}, produces = "application/json")
     public ResponseEntity getAllProducts() {
-        List<Product> allItems = service.getAllProducts();
+        List<Product> allItems = productService.getAllProducts();
         return ResponseEntity.ok(allItems);
     }
 
@@ -35,7 +35,7 @@ public class ProductController {
      */
     @GetMapping(path = "/{id}", produces = "application/json")
     public ResponseEntity getProductByID(@PathVariable Long id) {
-        Product oneItem = service.getProductById(id);
+        Product oneItem = productService.getProductById(id);
         return ResponseEntity.ok(oneItem);
     }
 
@@ -44,7 +44,7 @@ public class ProductController {
      */
     @GetMapping(path = "/category/{category}", produces = "application/json")
     public ResponseEntity getByCategory(@PathVariable String category) {
-        List<Product> categoryItems = service.getCategoryProducts(category);
+        List<Product> categoryItems = productService.getCategoryProducts(category);
         return ResponseEntity.ok(categoryItems);
     }
 
@@ -53,7 +53,7 @@ public class ProductController {
      */
     @GetMapping(path = "/search", produces = "application/json")
     public ResponseEntity searchByName(@RequestParam(name = "name") String request) {
-        List<Product> likeItems = service.searchProducts(request);
+        List<Product> likeItems = productService.searchProducts(request);
         return ResponseEntity.ok(likeItems);
     }
 
@@ -62,7 +62,7 @@ public class ProductController {
      */
     @PostMapping(path = "/", produces = "application/json")
     public ResponseEntity postProduct(@RequestBody CreateProductRequest request) {
-        Product newItem = service.createProduct(request);
+        Product newItem = productService.createProduct(request);
         return ResponseEntity.ok(newItem);
     }
 
@@ -71,7 +71,7 @@ public class ProductController {
      */
     @PutMapping(path = "/{id}", produces = "application/json")
     public ResponseEntity updateProduct(@PathVariable("id") Long id, @RequestBody CreateProductRequest request) {
-        Product editItem = service.putProduct(id, request);
+        Product editItem = productService.putProduct(id, request);
         return ResponseEntity.ok(editItem);
     }
 
@@ -80,7 +80,7 @@ public class ProductController {
      */
     @DeleteMapping(path = "/{id}", produces = "application/json")
     public ResponseEntity deleteProduct(@PathVariable("id") Long id) {
-        ResponseEntity<HttpStatus> deletItem = service.deleteProduct(id);
+        ResponseEntity<HttpStatus> deletItem = productService.deleteProduct(id);
         return ResponseEntity.ok(deletItem);
     }
 
@@ -92,6 +92,6 @@ public class ProductController {
      */
     @PostMapping("/upload")
     public ResponseEntity<?> uploadFiles(@RequestParam("files") MultipartFile[] files) {
-        return service.uploadFiles(files);
+        return productService.uploadFiles(files);
     }
 }
