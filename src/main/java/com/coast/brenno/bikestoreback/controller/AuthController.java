@@ -2,6 +2,7 @@ package com.coast.brenno.bikestoreback.controller;
 
 import com.coast.brenno.bikestoreback.dto.request.user.LoginRequest;
 import com.coast.brenno.bikestoreback.dto.request.user.SignUpReq;
+import com.coast.brenno.bikestoreback.model.User;
 import com.coast.brenno.bikestoreback.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -31,5 +32,14 @@ public class AuthController {
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpReq signUpRequest) {
         return userService.signUp(signUpRequest);
+    }
+
+    /**
+     * Get User Info
+     */
+    @GetMapping(path = "/profile", produces = "application/json")
+    public ResponseEntity getUser() {
+        User oneUser = userService.getCurrentUser();
+        return ResponseEntity.ok(oneUser);
     }
 }
