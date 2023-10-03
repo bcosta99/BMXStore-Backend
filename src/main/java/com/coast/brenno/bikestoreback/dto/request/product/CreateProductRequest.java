@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class CreateProductRequest {
+
     private String name;
     private String category;
     private String description;

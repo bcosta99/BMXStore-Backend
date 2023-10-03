@@ -6,6 +6,7 @@ import java.util.List;
 
 @AllArgsConstructor
 public class JwtResponse {
+
     private String token;
     private String type = "Bearer";
     private Long id;

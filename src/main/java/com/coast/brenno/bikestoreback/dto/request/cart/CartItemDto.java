@@ -14,8 +14,11 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CartItemDto {
+
     private Integer id;
+
     private @NotNull Integer quantity;
+
     private @NotNull Product product;
 
     public CartItemDto(Cart cart) {

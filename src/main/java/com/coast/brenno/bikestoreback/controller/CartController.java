@@ -12,21 +12,31 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/cart")
 public class CartController {
+
     @Autowired
     private CartService cartService;
 
+    /**
+     * Add an Item to Cart
+     */
     @PostMapping("/add")
     public ResponseEntity addToCart(@RequestBody AddToCartReq req) {
         cartService.addItemToCart(req);
         return ResponseEntity.ok("Item added to Cart succesfully!");
     }
 
+    /**
+     * Get All Items
+     */
     @GetMapping(path = {"", "/"})
     public ResponseEntity<CartDto> getCartItems() {
         CartDto cartDto = cartService.listCartItems();
         return new ResponseEntity<>(cartDto, HttpStatus.OK);
     }
 
+    /**
+     * Delete an Item
+     */
     @DeleteMapping("/delete/{cartItemId}")
     public ResponseEntity deleteCartItem(@PathVariable("cartItemId") Integer id) {
         cartService.deleteCartItem(id);

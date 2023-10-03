@@ -12,7 +12,9 @@ import javax.validation.constraints.NotNull;
 @Getter
 @Setter
 public class AddToCartReq {
+
     private @NotNull Long productId;
+
     private @NotNull Integer quantity;
 
     @Override
