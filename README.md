@@ -8,8 +8,8 @@ Este es un proyecto de eCommerce desarrollado en Java utilizando el framework Sp
 - **Carrito de Compras**: Los usuarios pueden agregar productos a su carrito y realizar compras.
 - **Autenticación y Autorización**: Utiliza Spring Security y tokens JWT para gestionar la autenticación y autorización de usuarios.
 - **Persistencia de Datos**: Utiliza Spring Data JPA para interactuar con la base de datos.
-- **Pagos**: (Pendiente) Integración de pasarela de pago (opcional, si es relevante para tu proyecto).
-- **Envío**: (Pendiente) Cálculo de costos de envío (opcional, si es relevante para tu proyecto).
+- **Pagos**: (Pendiente) Integración de pasarela de pago.
+- **Envío**: (Pendiente) Cálculo de costos de envío.
 
 ## Requisitos
 
